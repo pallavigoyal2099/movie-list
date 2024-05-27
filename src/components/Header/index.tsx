@@ -12,7 +12,7 @@ const Header = () => {
     (state: RootState) => state.movies.selectedGenres
   );
   const dispatch = useDispatch();
-
+console.log('dju', process.env.REACT_APP_BEARER_TOKEN)
   useEffect(() => {
     const options = {
       method: "GET",
@@ -20,7 +20,7 @@ const Header = () => {
       headers: {
         accept: "application/json",
         Authorization:
-          "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJjNjU1YWNhMWIwMTIyY2ZmNGJkOWRmODQ2ZDJmZGRiOCIsInN1YiI6IjY2NTIyZDRiNzliZmFlZDMzNWMxMzBlNSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.p0RlzSCFLilt0X-2JpJlvcEnyLtNPEP-EVmsF0WKjTc",
+        `Bearer ${process.env.REACT_APP_BEARER_TOKEN}`,
       },
     };
     axios
