@@ -1,0 +1,47 @@
+.movie-card {
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.3s ease-in-out;
+  color: white;
+}
+
+.movie-card:hover {
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.movie-card img {
+  width: 100%;
+  height: auto;
+  border-radius: 4px;
+  margin-bottom: 10px;
+}
+
+.movie-card h2 {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+}
+
+.movie-card p {
+  font-size: 0.9rem;
+  line-height: 1.4;
+  margin-bottom: 8px;
+}
+
+.movie-card p.genres {
+  font-style: italic;
+}
+
+.genre-list {
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  gap: 0.3rem;
+}
+.genrecard {
+  padding: 0.1rem 0.3rem;
+  background-color: #f0283c;
+  color: white;
+  border-radius: 0.2rem;
+}

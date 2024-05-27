@@ -1,0 +1,60 @@
+.header {
+  padding: 1rem 0.7rem 0.1rem 0.7rem;
+  background-color: #242424;
+  height: 6rem;
+  position: fixed;
+}
+.genres {
+  display: flex;
+  flex-direction: row;
+  gap: 0.6rem;
+  overflow-x: auto;
+  white-space: nowrap;
+  width: 100%;
+  margin-top: 1rem;
+}
+.genre {
+  background-color: #484848;
+  color: #f5f5f5;
+  border-radius: 0.24rem;
+  padding: 0.3rem 0.75rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  border: none;
+  font-size: 1rem;
+  cursor: pointer;
+}
+.genre:hover {
+  background-color: #363535; /* Adjust hover color as needed */
+}
+
+.genre.selected {
+  background-color: #f0283c; /* Adjust selected background color as needed */
+  color: #ffffff; /* Optional: change text color for selected button */
+}
+
+.genres::-webkit-scrollbar {
+  width: 0.2rem;
+  height: 0.2rem;
+}
+
+.genres:hover {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(0, 0, 0, 0.5) rgba(0, 0, 0, 0.1);
+}
+
+/* WebKit browsers (Chrome, Safari) */
+.genres:hover::-webkit-scrollbar {
+  width: 0.2rem;
+  height: 0.2rem;
+}
+
+.genres:hover::-webkit-scrollbar-thumb {
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 10px;
+}
+.genres:hover::-webkit-scrollbar-track {
+  background-color: rgba(0, 0, 0, 0.1);
+}
