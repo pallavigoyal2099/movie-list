@@ -64,20 +64,20 @@ const Movies = () => {
     }
   };
 //   const filteredMovies = movies.filter((movie) => {
-//     if (selectedGenres.includes(0)) {
-//       return true;
-//     } else {
-//       return movie.genre_ids.some((genreId: number) =>
-//         selectedGenres.includes(genreId)
-//       );
-//     }
-//   });
+  //     if (selectedGenres.includes(0)) {
+  //       return true;
+  //     } else {
+  //       return movie.genre_ids.some((genreId: number) =>
+  //         selectedGenres.includes(genreId)
+  //       );
+  //     }
+  //   });
 
   return (
     <div
       ref={containerRef}
       onScroll={handleScroll}
-      style={{ overflowY: "scroll", height: "500px" }}
+      style={{ overflowY: "scroll", height: "45.6rem" }}
 
     >
          {Object.keys(movies).map((year) => {
