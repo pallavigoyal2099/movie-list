@@ -2,14 +2,17 @@
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(16rem, 1fr));
   grid-gap: 20px;
-  padding: 10rem 1rem 1rem 1rem;
-  overflow-y: "scroll";
-  height: "500px";
+  padding: 1rem 1rem 1rem 1rem;
 }
 
 .movie-year{
-  margin-top: 10rem;
-    font-size: 1.5rem;
+  margin-top: 1rem;
+    font-size: 2rem;
     color: white;
     padding-left: .7em;
+}
+.no-movies{
+  color: white;
+  font-style: italic;
+font-size: 1rem;
 }

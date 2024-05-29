@@ -12,7 +12,7 @@ const Header = () => {
     (state: RootState) => state.movies.selectedGenres
   );
   const dispatch = useDispatch();
-console.log('dju', process.env.REACT_APP_BEARER_TOKEN)
+
   useEffect(() => {
     const options = {
       method: "GET",

@@ -5,7 +5,7 @@ interface Genre {
   name: string;
 }
 
-  interface Movie {
+ export interface Movie {
     genre_ids: number[];
     id: number;
     overview: string;
@@ -14,10 +14,15 @@ interface Genre {
     title: string;
   }
 
+interface MoviesByYear {
+  [key: string]: Movie[];
+}
+
+
 export interface MovieState {
   movieGenre: Genre[];
   selectedGenres: number[];
-  movies: { [year: number]: Movie[] };
+  movies: MoviesByYear;
 }
 
 const initialState: MovieState = {
