@@ -5,7 +5,7 @@ import { addMovies, Movie } from "../../redux/moviesSlice";
 import { RootState } from "../../redux/store";
 import "./movies.css";
 import MovieCard from "../MovieCard";
-import Loading from "../Loading";
+
 const filterMoviesByGenres = (movies: Movie[], selectedGenres: number[]) => {
   if (selectedGenres.includes(0)) {
     return movies;
