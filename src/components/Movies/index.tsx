@@ -83,9 +83,6 @@ const Movies = () => {
 
   return (
     <>
-      {loading ? (
-       <Loading/>
-      ) : (
         <div
           ref={containerRef}
           onScroll={handleScroll}
@@ -129,7 +126,6 @@ const Movies = () => {
             );
           })}
         </div>
-      )}
     </>
   );
 };
