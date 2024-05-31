@@ -28,7 +28,6 @@ const Movies = () => {
   const containerRef = useRef<HTMLDivElement>(null);
   const movies = useSelector((state: RootState) => state.movies.movies);
 
-
   const fetchMovies = async (year: number) => {
     setLoading(true);
     try {
@@ -65,15 +64,14 @@ const Movies = () => {
     fetchMovies(2012); // Initial fetch for 2012
   }, []);
 
-
   const handleScroll = () => {
     if (containerRef.current) {
-      const{scrollTop,scrollHeight,clientHeight}=containerRef.current;
+      const { scrollTop, scrollHeight, clientHeight } = containerRef.current;
       const difference = Math.round(scrollHeight - scrollTop - clientHeight);
       const tolerance = 1;
       if (difference <= tolerance) {
-        setBottomYear(bottomYear +1);
-        fetchMovies(bottomYear +1);
+        setBottomYear(bottomYear + 1);
+        fetchMovies(bottomYear + 1);
       } else if (scrollTop === 0) {
         setTopYear(topYear - 1);
         fetchMovies(topYear - 1);
@@ -83,49 +81,49 @@ const Movies = () => {
 
   return (
     <>
-        <div
-          ref={containerRef}
-          onScroll={handleScroll}
-          style={{ overflowY: 'scroll', height: '100vh', }}
-        >
-          {Object.keys(movies).map((year) => {
-            const filteredMovies = filterMoviesByGenres(
-              movies[year],
-              selectedGenres
-            );
-            const numericYear = Number(year);
-            return (
-              <div key={numericYear}>
-                <h2 className="movie-year">{numericYear}</h2>
-                <div className="movie-list">
-                  {filteredMovies.length === 0 ? (
-                    <div className="no-movies">
-                      No movies in this year for selected genre
-                    </div>
-                  ) : (
-                    filteredMovies?.map(
-                      (movie: {
-                        id: React.Key | null | undefined;
-                        title: string;
-                        poster_path: any;
-                        overview: string;
-                        genre_ids: number[];
-                      }) => (
-                        <MovieCard
-                          key={movie.id}
-                          title={movie.title}
-                          image={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`}
-                          overview={movie.overview}
-                          genres={movie.genre_ids}
-                        />
-                      )
+      <div
+        ref={containerRef}
+        onScroll={handleScroll}
+        style={{ overflowY: "scroll", height: "100vh" }}
+      >
+        {Object.keys(movies).map((year) => {
+          const filteredMovies = filterMoviesByGenres(
+            movies[year],
+            selectedGenres
+          );
+          const numericYear = Number(year);
+          return (
+            <div key={numericYear}>
+              <h2 className="movie-year">{numericYear}</h2>
+              <div className="movie-list">
+                {filteredMovies.length === 0 ? (
+                  <div className="no-movies">
+                    No movies in this year for selected genre
+                  </div>
+                ) : (
+                  filteredMovies?.map(
+                    (movie: {
+                      id: React.Key | null | undefined;
+                      title: string;
+                      poster_path: any;
+                      overview: string;
+                      genre_ids: number[];
+                    }) => (
+                      <MovieCard
+                        key={movie.id}
+                        title={movie.title}
+                        image={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`}
+                        overview={movie.overview}
+                        genres={movie.genre_ids}
+                      />
                     )
-                  )}
-                </div>
+                  )
+                )}
               </div>
-            );
-          })}
-        </div>
+            </div>
+          );
+        })}
+      </div>
     </>
   );
 };

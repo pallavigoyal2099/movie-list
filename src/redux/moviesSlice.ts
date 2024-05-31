@@ -5,19 +5,18 @@ interface Genre {
   name: string;
 }
 
- export interface Movie {
-    genre_ids: number[];
-    id: number;
-    overview: string;
-    popularity: number;
-    poster_path: string | null;
-    title: string;
-  }
+export interface Movie {
+  genre_ids: number[];
+  id: number;
+  overview: string;
+  popularity: number;
+  poster_path: string | null;
+  title: string;
+}
 
 interface MoviesByYear {
   [key: string]: Movie[];
 }
-
 
 export interface MovieState {
   movieGenre: Genre[];
@@ -60,7 +59,7 @@ export const movieSlice = createSlice({
         state.selectedGenres = [...state.selectedGenres, genreId];
       }
     },
-    addMovies: (state,action: PayloadAction<{ [year: number]: Movie[] }>) => {
+    addMovies: (state, action: PayloadAction<{ [year: number]: Movie[] }>) => {
       const year = Object.keys(action.payload)[0];
       const yearNumber = Number(year);
       state.movies[yearNumber] = action.payload[yearNumber];

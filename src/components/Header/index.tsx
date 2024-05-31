@@ -19,8 +19,7 @@ const Header = () => {
       url: "https://api.themoviedb.org/3/genre/movie/list",
       headers: {
         accept: "application/json",
-        Authorization:
-        `Bearer ${process.env.REACT_APP_BEARER_TOKEN}`,
+        Authorization: `Bearer ${process.env.REACT_APP_BEARER_TOKEN}`,
       },
     };
     axios
